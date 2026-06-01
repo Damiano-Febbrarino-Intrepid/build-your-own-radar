@@ -21,6 +21,10 @@
 @if $UIRefresh2022 {
   footer {
     margin-bottom: 40px;
+    background-color: $brand-primary-white;
+    color: $brand-primary-midnight;
+    border-top: 1px solid $brand-primary-wet-sand;
+    padding: 32px 0;
 
     p {
       @include eight-column-layout-margin;
@@ -28,10 +32,20 @@
       font-weight: normal;
       margin-top: 30px;
       font-size: 16px !important;
+      color: $brand-primary-midnight;
 
       @include media-query-large {
         font-size: 18px !important;
         text-align: center;
+      }
+    }
+
+    a {
+      color: $link-normal;
+      text-decoration: none;
+
+      &:hover {
+        color: $link-hover;
       }
     }
   }

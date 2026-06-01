@@ -333,7 +333,7 @@ const Radar = function (size, radar) {
 
     var group = quadrantGroup
       .append('g')
-      .attr('class', 'blip-link')
+      .attr('class', 'blip-link ' + order)
       .attr('id', 'blip-link-' + blip.id())
 
     if (blip.isNew()) {
@@ -355,7 +355,7 @@ const Radar = function (size, radar) {
     var blipText = blip.blipText() + '. ' + blip.name() + (blip.topic() ? '. - ' + blip.topic() : '')
     blipListItem
       .append('div')
-      .attr('class', 'blip-list-item')
+      .attr('class', 'blip-list-item ' + order)
       .attr('id', 'blip-list-item-' + blip.id())
       .text(blipText)
 
@@ -371,6 +371,11 @@ const Radar = function (size, radar) {
       d3.selectAll('g.blip-link').attr('opacity', 0.3)
       group.attr('opacity', 1.0)
       blipListItem.selectAll('.blip-list-item').classed('highlight', true)
+      d3.select('.d3-tip')
+        .classed('first', order === 'first')
+        .classed('second', order === 'second')
+        .classed('third', order === 'third')
+        .classed('fourth', order === 'fourth')
       tip.show(blip.name(), group.node())
     }
 
@@ -378,6 +383,11 @@ const Radar = function (size, radar) {
       d3.selectAll('g.blip-link').attr('opacity', 1.0)
       blipListItem.selectAll('.blip-list-item').classed('highlight', false)
       tip.hide().style('left', 0).style('top', 0)
+      d3.select('.d3-tip')
+        .classed('first', false)
+        .classed('second', false)
+        .classed('third', false)
+        .classed('fourth', false)
     }
 
     blipListItem.on('mouseover', mouseOver).on('mouseout', mouseOut)
@@ -587,6 +597,11 @@ const Radar = function (size, radar) {
     group.attr('opacity', 1.0)
     d3.selectAll('.blip-list-item').classed('highlight', false)
     d3.select('#blip-list-item-' + blip.id()).classed('highlight', true)
+    d3.select('.d3-tip')
+      .classed('first', quadrant.order === 'first')
+      .classed('second', quadrant.order === 'second')
+      .classed('third', quadrant.order === 'third')
+      .classed('fourth', quadrant.order === 'fourth')
     if (isQuadrantSelected) {
       tip.show(blip.name(), group.node())
     } else {
@@ -761,15 +776,6 @@ const Radar = function (size, radar) {
       }
     })
   }
-  function addDisclaimerText(disclaimerParent) {
-    disclaimerParent
-      .append('p')
-      .classed('disclaimer-text', true)
-      .classed('show-disclaimer', true)
-      .html(
-        '<b>Note:</b> The official Thoughtworks Technology Radar has updated the name of the outermost ring from “Hold” to “Caution”. The open-source Build Your Own Radar tool will now reflect this change and use the “Caution” label.',
-      )
-  }
   self.plot = function () {
     var rings, quadrants, alternatives, currentSheet
 
@@ -785,8 +791,7 @@ const Radar = function (size, radar) {
 
     if (featureToggles.UIRefresh2022) {
       renderQuadrantSubnav(radarHeader, quadrants, renderFullRadar)
-      if (featureToggles.normalizeRingNameHoldToCaution) addDisclaimerText(radarHeader)
-      renderSearch(radarHeader, quadrants)
+      if (featureToggles.normalizeRingNameHoldToCaution) renderSearch(radarHeader, quadrants)
       renderAlternativeRadars(radarFooter, alternatives, currentSheet)
       renderQuadrantTables(quadrants, rings)
       renderButtons(radarFooter)
@@ -797,8 +802,7 @@ const Radar = function (size, radar) {
       })
     } else {
       plotRadarHeader()
-      if (featureToggles.normalizeRingNameHoldToCaution) addDisclaimerText(header)
-      plotRadarFooter()
+      if (featureToggles.normalizeRingNameHoldToCaution) plotRadarFooter()
       if (alternatives.length) {
         plotAlternativeRadars(alternatives, currentSheet)
       }

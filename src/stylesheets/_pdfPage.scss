@@ -18,7 +18,7 @@
     }
 
     .pdf-title {
-      font-family: 'Bitter', serif;
+    font-family: $headingFontFamily;
       font-size: 4rem;
       margin: 24mm 12mm;
       font-weight: bold;
@@ -133,9 +133,9 @@
       margin-bottom: 20px;
 
       &__name {
-        font-size: 2rem;
-        font-weight: bold;
-        font-family: 'Bitter', serif;
+      font-size: 2rem;
+      font-weight: bold;
+      font-family: $headingFontFamily;
         margin-bottom: 2.5rem;
         display: block !important;
       }
@@ -145,19 +145,19 @@
       }
 
       &.first .quadrant-table__name {
-        color: $sapphire;
+        color: $okvango;
       }
 
       &.second .quadrant-table__name {
-        color: $turmeric;
+        color: $sa-pa;
       }
 
       &.third .quadrant-table__name {
-        color: $jade;
+        color: $santorini;
       }
 
       &.fourth .quadrant-table__name {
-        color: $flamingo;
+        color: $laguna;
       }
 
       .blip-list__item {

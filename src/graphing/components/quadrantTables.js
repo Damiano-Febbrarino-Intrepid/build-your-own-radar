@@ -84,6 +84,12 @@ function renderBlipDescription(blip, ring, quadrant, tip, groupBlipTooltipText) 
     const toolTipText = blip.isGroup() ? groupBlipTooltipText : blip.name()
 
     if (displayToolTip && !isGroupIdInGraph) {
+      d3.select('div.d3-tip')
+        .classed('first', quadrant.order === 'first')
+        .classed('second', quadrant.order === 'second')
+        .classed('third', quadrant.order === 'third')
+        .classed('fourth', quadrant.order === 'fourth')
+
       tip.show(toolTipText, selectedBlipOnGraph.node())
 
       const selectedBlipCoords = selectedBlipOnGraph.node().getBoundingClientRect()
@@ -106,6 +112,11 @@ function renderBlipDescription(blip, ring, quadrant, tip, groupBlipTooltipText) 
     d3.selectAll('g > a.blip-link').attr('opacity', 1.0)
     blipTableItem.classed('highlight', false)
     tip.hide().style('left', 0).style('top', 0)
+    d3.select('div.d3-tip')
+      .classed('first', false)
+      .classed('second', false)
+      .classed('third', false)
+      .classed('fourth', false)
   }
 
   const blipClick = function (e) {

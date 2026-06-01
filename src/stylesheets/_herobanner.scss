@@ -3,13 +3,13 @@
 
 @if $UIRefresh2022 {
   .hero-banner {
-    height: $tabletBannerHeight;
-    background-color: $amethyst;
+    min-height: $tabletBannerHeight;
+    background-color: $brand-primary-sand;
     background-image: url('/images/banner-image-mobile.jpg');
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: right;
-    color: $white;
+    background-position: right center;
+    color: $brand-primary-midnight;
     display: flex;
     align-items: center;
     margin: 0 !important;
@@ -40,7 +40,10 @@
       width: fit-content;
       text-align: left;
       text-transform: none;
-      letter-spacing: 0;
+      letter-spacing: -0.03em;
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.05;
       cursor: pointer;
     }
 

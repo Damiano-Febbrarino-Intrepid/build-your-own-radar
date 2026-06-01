@@ -1,3 +1,12 @@
+$brand-primary-intrepid-red: #ff2828;
+$brand-primary-midnight: #222222;
+$brand-primary-sand: #f6f4f0;
+$brand-primary-wet-sand: #e6e1d7;
+$brand-primary-white: #ffffff;
+$brand-secondary-link-blue: #4178ff;
+$brand-secondary-text-weak: #757575;
+$brand-secondary-text-disabled: #bebebe;
+
 $green: #86b782;
 $blue: #1ebccd;
 $orange: #f38a3e;
@@ -20,30 +29,34 @@ $grey-alpha-03: rgba(255, 255, 255, 0.3);
 // Brand colors for use across theme.
 $black: #000000; //onyx
 $white: #ffffff; //white
-$wave: #163c4d; //wave
-$wave-light: #6b8591; //wave-light
-$flamingo: #e16a7c; //flamingo
-$mist: #edf1f3; //mist (ededed)
-$sapphire: #47a1ad; //$sapphire
-$jade: #6b9e78; //jade
-$turmeric: #cc850a; //turmeric
+$wave: $brand-primary-intrepid-red; //wave
+$wave-light: #ff6b6b; //wave-light
+$laguna: #ffa0b9; //laguna
+$mist: $brand-primary-sand; //mist (ededed)
+$okvango: #0a6e50; //okvango
+$santorini: #4178ff; //santorini
+$sa-pa: #50b464; //sa pa
 $amethyst: #634f7d; //amethyst
+
+// Phoenix Secondary colors added
+$glacier: #50dcd2; //glacier (teal)
+$sahara: #ff9155; //sahara (orange)
 
 // Other colors
 $mist-s30: #71777d;
 $mist-s20: #d5d9db;
 $mist-s10: #e1e5e7;
 $mist-light: #f7fafc;
-$flamingo-s40: #bd4257;
+$laguna-s40: #bd4257;
 
 $button-normal: $wave; //button color
 $button-disabled: #909090; //disabled state for links and buttons
 
-$link-normal: $black; //links color
-$link-hover: #9b293c; //links hover state color
+$link-normal: $santorini; //links color
+$link-hover: #0026b3; //links hover state color
 $error-text: #d14234;
 
-$flamingo-dark: #9b293c; //flamingo-dark
-$sapphire-dark: #1f8290; //$sapphire-dark
-$jade-dark: #517b5c; //jade-dark
-$turmeric-dark: #a06908; //turmeric-dark
+$laguna-dark: #cf8095; //laguna-dark
+$okvango-dark: #084c3d; //$okvango-dark
+$santorini-dark: #335dd1; //santorini-dark
+$sa-pa-dark: #3f9853; //sa pa-dark

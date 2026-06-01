@@ -156,22 +156,22 @@
     polygon,
     path {
       &.first {
-        fill: $green;
+        fill: $sa-pa;
         stroke: none;
       }
 
       &.second {
-        fill: $blue;
+        fill: $laguna;
         stroke: none;
       }
 
       &.third {
-        fill: $orange;
+        fill: $sahara;
         stroke: none;
       }
 
       &.fourth {
-        fill: $violet;
+        fill: $santorini;
         stroke: none;
       }
     }
@@ -201,22 +201,22 @@
       rect,
       path {
         &.first {
-          fill: $sapphire-dark;
+          fill: $sa-pa;
           stroke: none;
         }
 
         &.second {
-          fill: $turmeric-dark;
+          fill: $laguna;
           stroke: none;
         }
 
         &.third {
-          fill: $jade-dark;
+          fill: $sahara;
           stroke: none;
         }
 
         &.fourth {
-          fill: $flamingo-dark;
+          fill: $santorini;
           stroke: none;
         }
       }
@@ -346,8 +346,24 @@
           font-weight: 400;
 
           &.highlight {
-            color: white;
+            color: $white;
             background-color: rgba(0, 0, 0, 0.8);
+          }
+
+          &.first.highlight {
+            background-color: $santorini;
+          }
+
+          &.second.highlight {
+            background-color: $glacier;
+          }
+
+          &.third.highlight {
+            background-color: $sahara;
+          }
+
+          &.fourth.highlight {
+            background-color: $sahara;
           }
         }
 
@@ -358,19 +374,12 @@
 
           p {
             margin: 0;
-            border-top: 1px solid rgb(119, 119, 119);
-            border-bottom: 1px solid rgb(119, 119, 119);
+            border-top: 1px solid $brand-secondary-text-disabled;
+            border-bottom: 1px solid $brand-secondary-text-disabled;
             padding: 20px;
-            color: $grey-text;
+            color: $brand-secondary-text-weak;
             font-weight: 100;
             font-size: 14px;
-          }
-
-          transition: max-height 0.2s ease;
-
-          &.expanded {
-            transition: max-height 0.5s ease 0.2s;
-            max-height: 1000px;
           }
         }
       }
@@ -477,16 +486,16 @@
     }
 
     #first-quadrant-mobile {
-      background-color: $sapphire;
+      background-color: $okvango;
     }
     #second-quadrant-mobile {
-      background-color: $turmeric;
+      background-color: $sa-pa;
     }
     #third-quadrant-mobile {
-      background-color: $jade;
+      background-color: $santorini;
     }
     #fourth-quadrant-mobile {
-      background-color: $flamingo;
+      background-color: $laguna;
     }
   }
 }

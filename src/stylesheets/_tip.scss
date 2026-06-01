@@ -12,6 +12,42 @@
   z-index: 20;
 }
 
+.d3-tip.first {
+  background: $sa-pa;
+  color: $white;
+}
+
+.d3-tip.second {
+  background: $laguna;
+  color: $white;
+}
+
+.d3-tip.third {
+  background: $sahara;
+  color: $white;
+}
+
+.d3-tip.fourth {
+  background: $santorini;
+  color: $white;
+}
+
+.d3-tip.first:after {
+  color: $sa-pa;
+}
+
+.d3-tip.second:after {
+  color: $laguna;
+}
+
+.d3-tip.third:after {
+  color: $sahara;
+}
+
+.d3-tip.fourth:after {
+  color: $santorini;
+}
+
 @media screen and (min-width: 800px) {
   .d3-tip {
     display: block;

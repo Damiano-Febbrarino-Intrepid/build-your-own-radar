@@ -1931,14 +1931,14 @@ html {
   -ms-text-size-adjust: 100%;
 }
 body {
-  font-family: 'Open Sans', 'Microsoft YaHei', 'Hiragino Sans GB', 'Hiragino Sans GB W3', '微软雅黑', 'Helvetica Neue',
-    Arial, sans-serif;
+  font-family: 'Montserrat', Arial, 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 18px;
   line-height: 1.6em;
-  color: #221d1f;
+  color: #222222;
   margin: 0;
   padding: 0;
-  font-weight: 100;
+  background-color: #f6f4f0;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
 @media screen and (max-width: 959px) {
@@ -6981,7 +6981,7 @@ div.separator-line {
   }
 }
 p.note-section {
-  font-family: Inter;
+  font-family: 'Montserrat', Arial, 'Helvetica Neue', Helvetica, sans-serif;
   font-weight: 200;
   padding-top: 64px;
 }

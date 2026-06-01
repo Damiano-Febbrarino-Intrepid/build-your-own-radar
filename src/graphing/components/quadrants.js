@@ -223,8 +223,22 @@ function wrapQuadrantNameInMultiLine(elem, isTopQuadrants, quadrantNameGroup, ti
     if (lineBreakIndex >= secondLine.length) {
       return ''
     } else {
-      quadrantNameGroup.on('mouseover', () => tip.show(text, quadrantNameGroup.node()))
-      quadrantNameGroup.on('mouseout', () => tip.hide(text, quadrantNameGroup.node()))
+      quadrantNameGroup.on('mouseover', () => {
+        d3.select('div.d3-tip')
+          .classed('first', quadrant.order === 'first')
+          .classed('second', quadrant.order === 'second')
+          .classed('third', quadrant.order === 'third')
+          .classed('fourth', quadrant.order === 'fourth')
+        tip.show(text, quadrantNameGroup.node())
+      })
+      quadrantNameGroup.on('mouseout', () => {
+        tip.hide(text, quadrantNameGroup.node())
+        d3.select('div.d3-tip')
+          .classed('first', false)
+          .classed('second', false)
+          .classed('third', false)
+          .classed('fourth', false)
+      })
       return '...'
     }
   }
@@ -349,7 +363,7 @@ function renderRadarQuadrants(size, svg, quadrant, rings, ringCalculator, tip) {
     .append('rect')
     .attr('width', `${quadrantWidth}px`)
     .attr('height', `${quadrantHeight}px`)
-    .attr('fill', '#edf1f3')
+    .attr('fill', '#e6e1d7')
     .attr('x', rectCoordMap[quadrant.order].x)
     .attr('y', rectCoordMap[quadrant.order].y)
     .style('pointer-events', 'none')

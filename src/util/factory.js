@@ -88,8 +88,8 @@ const plotRadar = function (title, blips, currentRadarName, alternativeRadars) {
   const size = featureToggles.UIRefresh2022
     ? getGraphSize()
     : window.innerHeight - 133 < 620
-    ? 620
-    : window.innerHeight - 133
+      ? 620
+      : window.innerHeight - 133
   new GraphingRadar(size, radar).init().plot()
 }
 
@@ -355,7 +355,6 @@ const Factory = function () {
           ' to generate an <br />interactive version of your Technology Radar. Not sure how? <a href ="https://www.thoughtworks.com/radar/byor">Read this first.</a></p></div>'
 
         plotBanner(content, bannerText)
-        plotDisclaimer(content)
         plotForm(content)
 
         plotFooter(content)
@@ -417,16 +416,6 @@ function plotFooter(content) {
 
 function plotBanner(content, text) {
   content.append('div').attr('class', 'input-sheet__banner').html(text)
-}
-
-function plotDisclaimer(content) {
-  if (!featureToggles.normalizeRingNameHoldToCaution) return
-  content
-    .append('p')
-    .attr('class', 'landing-disclaimer-text show-disclaimer')
-    .html(
-      '<b>Note:</b> The official Thoughtworks Technology Radar has updated the name of the outermost ring from “Hold” to “Caution”. The open-source Build Your Own Radar tool will now reflect this change and use the “Caution” label.',
-    )
 }
 
 function plotForm(content) {
