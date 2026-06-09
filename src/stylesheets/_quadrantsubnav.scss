@@ -96,23 +96,23 @@
             transition: font-weight 0.3s ease-in-out;
 
             &:nth-child(1) {
-              border-color: $mist-s30;
+              border-color: $brand-primary-wet-sand; // All quadrants
             }
 
             &:nth-child(2) {
-              border-color: $okvango;
+              border-color: $sa-pa; // Techniques
             }
 
             &:nth-child(3) {
-              border-color: $sa-pa;
+              border-color: $laguna; // Platforms
             }
 
             &:nth-child(4) {
-              border-color: $santorini;
+              border-color: $sahara; // Tools
             }
 
             &:nth-child(5) {
-              border-color: $laguna;
+              border-color: $santorini; // Languages & Frameworks
             }
           }
         }

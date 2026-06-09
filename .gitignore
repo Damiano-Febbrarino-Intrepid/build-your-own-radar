@@ -21,3 +21,4 @@ cypress/
 .talismanrc
 
 .vscode/
+package-lock.json

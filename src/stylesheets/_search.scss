@@ -17,15 +17,17 @@
     border: 1px solid $brand-primary-wet-sand;
     border-radius: 16px;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-    padding: 18px 22px;
+    /* reduced padding to bring content closer to header */
+    padding: 8px 12px;
     height: auto;
-    margin: 48px auto 40px;
+    /* reduce top margin so radar sits closer under navigation */
+    margin: 8px auto 16px;
     display: flex;
     justify-content: center;
     align-items: center;
 
     &.sticky-offset {
-      margin-top: 108px;
+      margin-top: 24px;
     }
 
     @include layout-margin(1, $screen-small);
@@ -36,34 +38,34 @@
 
     @include media-query-medium {
       height: 48px;
-      margin: 64px auto 48px;
+      margin: 12px auto 12px;
 
       &.sticky-offset {
-        margin-top: 124px;
+        margin-top: 32px;
       }
     }
 
     @include media-query-large {
-      margin: 72px auto 48px;
+      margin: 16px auto 12px;
 
       &.sticky-offset {
-        margin-top: 132px;
+        margin-top: 36px;
       }
     }
 
     @include media-query-xlarge {
-      margin: 32px auto;
+      margin: 12px auto;
 
       &.sticky-offset {
-        margin-top: 92px;
+        margin-top: 28px;
       }
     }
 
     @include media-query-xxlarge {
-      margin: 40px auto;
+      margin: 16px auto;
 
       &.sticky-offset {
-        margin-top: 100px;
+        margin-top: 32px;
       }
     }
 
